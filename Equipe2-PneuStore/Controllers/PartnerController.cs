@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-
+﻿using Equipe2_PneuStore.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiPneuStore.Controllers
 {
@@ -9,12 +8,12 @@ namespace ApiPneuStore.Controllers
     [Route("[controller]")]
     public class PartnerController : ApiBaseController
     {
-        //IPartnerService _service;
+        IPartnerService _service;
 
-        //public PartnerController(IPartnerService service)
-        //{
-        //    _service = service;
-        //}
+        public PartnerController(IPartnerService service)
+        {
+            _service = service;
+        }
 
         [HttpGet]
         public IActionResult Index() => ApiOk(_service.All());

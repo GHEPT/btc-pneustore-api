@@ -2,10 +2,8 @@
 using Equipe2_PneuStore.Data;
 using System;
 using System.Collections.Generic;
-<<<<<<< Updated upstream
 using System.Linq;
-=======
->>>>>>> Stashed changes
+
 
 namespace Equipe2_PneuStore.Services
 {

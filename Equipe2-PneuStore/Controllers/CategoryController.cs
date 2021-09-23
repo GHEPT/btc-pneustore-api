@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-
+﻿using Equipe2_PneuStore.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiPneuStore.Controllers
 {
@@ -9,12 +8,12 @@ namespace ApiPneuStore.Controllers
     [Route("[controller]")]
     public class CategoryController : ApiBaseController
     {
-        //ICategoryService _service;
+        ICategoryService _service;
 
-        //public CategoryController(ICategoryService service)
-        //{
-        //    _service = service;
-        //}
+        public CategoryController(ICategoryService service)
+        {
+            _service = service;
+        }
 
         [HttpGet]
         public IActionResult Index() => ApiOk(_service.All());

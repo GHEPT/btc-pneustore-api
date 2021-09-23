@@ -1,7 +1,6 @@
 ﻿using ApiPneuStore.API;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace ApiPneuStore.Controllers
 {
     public abstract class ApiBaseController : ControllerBase
