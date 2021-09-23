@@ -6,25 +6,25 @@ using System.Linq;
 
 namespace Equipe2_PneuStore.Services
 {
-    public class TyreService : ITyreService
+    public class PartnerService : IPartnerService
     {
         Context _context;
         //construtor
-        public TyreService(Context context)
+        public PartnerService(Context context)
         {
             _context = context;
         }
 
-        public List<Tyre> All()
+        public List<Partner> All()
         {
             return _context./*Tyre*/.ToList();
         }
 
-        public bool Create(Tyre tyre)
+        public bool Create(Partner partner)
         {
             try
             {
-                _context.Add(tyre);
+                _context.Add(partner);
                 _context.SaveChanges();
                 return true;
             }
@@ -34,19 +34,19 @@ namespace Equipe2_PneuStore.Services
             }
         }
 
-        public Tyre Get(int? id)
+        public Partner Get(int? id)
         {
             return _context./*Tyre*/.FirstOrDefault(p => p.id == id);
         }
 
-        public bool Update(Tyre tyre)
+        public bool Update(Partner partner)
         {
             try
             {
-                if (!_context./*Tyre*/.Any(p => p.id == tyre.Id))
+                if (!_context./*Tyre*/.Any(p => p.id == partner.Id))
                     throw new Exception("Item não encontrado");
 
-                _context.Update(tyre);
+                _context.Update(partner);
                 _context.SaveChanges();
                 return true;
             }
@@ -54,6 +54,21 @@ namespace Equipe2_PneuStore.Services
             {
                 return false;
             }
+        }
+
+        public bool Delete(int? id)
+        {
+            try
+            {
+                _context.Remove(this.Get(id));
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
     }
 }
