@@ -7,5 +7,6 @@ namespace Equipe2_PneuStore.Data
 {
     public class SeedDatabase
     {
+
     }
 }
