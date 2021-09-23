@@ -1,6 +1,4 @@
-﻿
-
-namespace ApiPneuStore.API
+﻿namespace ApiPneuStore.API
 {
     public class APIResponse<T>
     {
