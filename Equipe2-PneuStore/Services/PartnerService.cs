@@ -17,7 +17,7 @@ namespace Equipe2_PneuStore.Services
 
         public List<Partner> All()
         {
-            return _context./*Tyre*/.ToList();
+            return _context.Partner.ToList();
         }
 
         public bool Create(Partner partner)
@@ -36,14 +36,14 @@ namespace Equipe2_PneuStore.Services
 
         public Partner Get(int? id)
         {
-            return _context./*Tyre*/.FirstOrDefault(p => p.id == id);
+            return _context.Partner.FirstOrDefault(p => p.Id == id);
         }
 
         public bool Update(Partner partner)
         {
             try
             {
-                if (!_context./*Tyre*/.Any(p => p.id == partner.Id))
+                if (!_context.Partner.Any(p => p.Id == partner.Id))
                     throw new Exception("Item não encontrado");
 
                 _context.Update(partner);

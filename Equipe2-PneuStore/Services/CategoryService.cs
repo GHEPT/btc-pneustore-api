@@ -18,7 +18,7 @@ namespace Equipe2_PneuStore.Services
 
         public List<Category> All()
         {
-            return _context./**/.ToList();
+            return _context.Category.ToList();
         }
 
         public bool Create(Category category)
@@ -37,7 +37,7 @@ namespace Equipe2_PneuStore.Services
 
         public Category Get(int? id)
         {
-            return _context./**/.FirstOrDefault(p => p.id == id);
+            return _context.Category.FirstOrDefault(p => p.Id == id);
         }
     }
 }

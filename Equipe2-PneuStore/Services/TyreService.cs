@@ -18,7 +18,7 @@ namespace Equipe2_PneuStore.Services
 
         public List<Tyre> All()
         {
-            return _context./*Tyre*/.ToList();
+            return _context.Tyre.ToList();
         }
 
         public bool Create(Tyre tyre)
@@ -37,14 +37,14 @@ namespace Equipe2_PneuStore.Services
 
         public Tyre Get(int? id)
         {
-            return _context./*Tyre*/.FirstOrDefault(p => p.id == id);
+            return _context.Tyre.FirstOrDefault(p => p.Id == id);
         }
 
         public bool Update(Tyre tyre)
         {
             try
             {
-                if (!_context./*Tyre*/.Any(p => p.id == tyre.Id))
+                if (!_context.Tyre.Any(p => p.Id == tyre.Id))
                     throw new Exception("Item não encontrado");
 
                 _context.Update(tyre);
