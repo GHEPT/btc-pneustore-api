@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApiPneuStore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace Equipe2_PneuStore.Services
             }
         }
 
-        public Tyre Get(int id)
+        public Tyre Get(int? id)
         {
             throw new NotImplementedException();
         }
