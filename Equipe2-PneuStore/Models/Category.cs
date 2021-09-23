@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ApiPneuStore.Models
+﻿namespace ApiPneuStore.Models
 {
     public class Category
     {
