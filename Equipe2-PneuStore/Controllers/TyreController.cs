@@ -1,6 +1,5 @@
 ﻿using Equipe2_PneuStore.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 
 
 namespace ApiPneuStore.Controllers
