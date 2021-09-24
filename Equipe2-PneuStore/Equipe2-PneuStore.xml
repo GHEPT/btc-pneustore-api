@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Equipe2-PneuStore</name>
+    </assembly>
+    <members>
+        <member name="M:ApiPneuStore.Controllers.CategoryController.Index">
+            <summary>
+            Retorna a lista de categorias cadastradas no banco de dados.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiPneuStore.Controllers.CategoryController.Index(System.Nullable{System.Int32})">
+            <summary>
+            Retorna a categoria buscada de acordo com o id informado.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiPneuStore.Controllers.PartnerController.Index">
+            <summary>
+            Retorna a lista de parceiros cadastrados no banco de dados.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiPneuStore.Controllers.PartnerController.Index(System.Nullable{System.Int32})">
+            <summary>
+            Retorna um parceiro cadastrado de acordo com o id informado.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiPneuStore.Controllers.TyreController.Index">
+            <summary>
+            Retorna a lista com todos os pneus existentes no banco de dados.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiPneuStore.Controllers.TyreController.Index(System.Nullable{System.Int32})">
+            <summary>
+            Retorna um pneu específico de acordo com o id informado.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
