@@ -1,4 +1,5 @@
 ﻿using Equipe2_PneuStore.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
@@ -23,6 +24,7 @@ namespace ApiPneuStore.Controllers
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [Authorize]
         [HttpGet]
         public IActionResult Index() => ApiOk(_service.All());
 
@@ -33,6 +35,7 @@ namespace ApiPneuStore.Controllers
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize]
         [HttpGet]
         [Route("{id}")]
         public IActionResult Index(int? id) => ApiOk(_service.Get(id));
