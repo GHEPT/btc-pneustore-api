@@ -7,6 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace Equipe2_PneuStore
 {
@@ -26,10 +29,27 @@ namespace Equipe2_PneuStore
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Equipe2_PneuStore", Version = "v1" });
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Title = "Equipe2_BTC_PneuStore",
+                        Description = "An API created to the bootcamp of the PneuStore",
+                        License = new OpenApiLicense
+                        {
+                            Name = "API License",
+                            Url = new Uri("https://www.pneustore.com.br"),
+                        },
+                        Version = "v1"
+                    });
+
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = $"{Path.Combine(AppContext.BaseDirectory, xmlFile)}";
+                c.IncludeXmlComments(xmlPath);
+
             });
 
-            services.AddDbContext<Context>(options =>
+                services.AddDbContext<Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("PneuStore"))
             );
 
