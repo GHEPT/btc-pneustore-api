@@ -1,15 +1,19 @@
 using Equipe2_PneuStore.Data;
 using Equipe2_PneuStore.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using System.Reflection;
+using System.Text;
 
 namespace Equipe2_PneuStore
 {
@@ -53,9 +57,36 @@ namespace Equipe2_PneuStore
                 options.UseSqlServer(Configuration.GetConnectionString("PneuStore"))
             );
 
+            #region Dependency Injection
             services.AddTransient<ITyreService, TyreService>();
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IPartnerService, PartnerService>();
+            services.AddTransient<IAuthService, AuthService>();
+
+            services.AddDefaultIdentity<IdentityUser>()                
+                .AddEntityFrameworkStores<Context>();
+            #endregion
+
+            #region Configure Bearer Authentication
+            var key = Encoding.ASCII.GetBytes(Configuration["Jwt:Key"]);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+            #endregion
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
