@@ -21,7 +21,7 @@ namespace Equipe2_PneuStore.Controllers
 
 
         /// <summary>
-        /// Creates a new user for the API
+        /// Creates a new user for the API.
         /// </summary>
         /// <param name="identityUser"></param>
         /// <returns></returns>
