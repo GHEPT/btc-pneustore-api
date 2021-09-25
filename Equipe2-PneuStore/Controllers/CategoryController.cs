@@ -24,6 +24,7 @@ namespace ApiPneuStore.Controllers
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [Authorize]
         [HttpGet]
         public IActionResult Index() => ApiOk(_service.All());
@@ -35,6 +36,7 @@ namespace ApiPneuStore.Controllers
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [Authorize]
         [HttpGet]
         [Route("{id}")]

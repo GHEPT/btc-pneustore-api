@@ -8,6 +8,8 @@ using System;
 
 namespace Equipe2_PneuStore.Controllers
 {
+    [Produces(MediaTypeNames.Application.Json)]
+    [Consumes(MediaTypeNames.Application.Json)]
     [ApiController]
     [Route("[controller]")]
     public class AuthController : ApiBaseController
@@ -18,7 +20,6 @@ namespace Equipe2_PneuStore.Controllers
         {
             _service = service;
         }
-
 
         /// <summary>
         /// Creates a new user for the API.
@@ -36,7 +37,6 @@ namespace Equipe2_PneuStore.Controllers
                 ApiOk(identityUser) :
                 ApiBadRequest("Erro ao tentar criar usuário!");
         }
-
 
         /// <summary>
         /// Get an access token for an authorized user.

@@ -6,41 +6,55 @@
     <members>
         <member name="M:ApiPneuStore.Controllers.CategoryController.Index">
             <summary>
-            Retorna a lista de categorias cadastradas no banco de dados.
+            Returns the list of categories registered in the database.
             </summary>
             <returns></returns>
         </member>
         <member name="M:ApiPneuStore.Controllers.CategoryController.Index(System.Nullable{System.Int32})">
             <summary>
-            Retorna a categoria buscada de acordo com o id informado.
+            Returns the searched category according to the id informed.
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:ApiPneuStore.Controllers.PartnerController.Index">
             <summary>
-            Retorna a lista de parceiros cadastrados no banco de dados.
+            Returns the list of registered partners in the database.
             </summary>
             <returns></returns>
         </member>
         <member name="M:ApiPneuStore.Controllers.PartnerController.Index(System.Nullable{System.Int32})">
             <summary>
-            Retorna um parceiro cadastrado de acordo com o id informado.
+            Returns a registered partner according to the entered id.
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:ApiPneuStore.Controllers.TyreController.Index">
             <summary>
-            Retorna a lista com todos os pneus existentes no banco de dados.
+            Returns the list of all tires in the database.
             </summary>
             <returns></returns>
         </member>
         <member name="M:ApiPneuStore.Controllers.TyreController.Index(System.Nullable{System.Int32})">
             <summary>
-            Retorna um pneu específico de acordo com o id informado.
+            Returns a specific tire according to the id entered.
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Equipe2_PneuStore.Controllers.AuthController.Register(Microsoft.AspNetCore.Identity.IdentityUser)">
+            <summary>
+            Creates a new user for the API.
+            </summary>
+            <param name="identityUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Equipe2_PneuStore.Controllers.AuthController.Token(Microsoft.AspNetCore.Identity.IdentityUser)">
+            <summary>
+            Get an access token for an authorized user.
+            </summary>
+            <param name="identityUser"></param>
             <returns></returns>
         </member>
     </members>

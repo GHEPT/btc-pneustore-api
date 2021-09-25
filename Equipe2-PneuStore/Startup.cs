@@ -38,15 +38,19 @@ namespace Equipe2_PneuStore
                     new OpenApiInfo
                     {
                         Title = "Equipe2_BTC_PneuStore",
-                        Description = "An API created to the bootcamp of the PneuStore",
+                        Description = "An API created to the bootcamp of the PneuStore BackEnd side.",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Eduardo Meireles, Eduardo Teodoro, Josué Barros e Thales Ribeiro",
+                        },
+
                         License = new OpenApiLicense
                         {
-                            Name = "API License",
+                            Name = "API License - https://www.pneustore.com.br",
                             Url = new Uri("https://www.pneustore.com.br"),
                         },
                         Version = "v1"
                     });
-
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = $"{Path.Combine(AppContext.BaseDirectory, xmlFile)}";
