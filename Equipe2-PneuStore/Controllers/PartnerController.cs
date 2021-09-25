@@ -20,7 +20,7 @@ namespace ApiPneuStore.Controllers
         }
 
         /// <summary>
-        /// Retorna a lista de parceiros cadastrados no banco de dados.
+        /// Returns the list of registered partners in the database.
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -29,7 +29,7 @@ namespace ApiPneuStore.Controllers
         public IActionResult Index() => ApiOk(_service.All());
 
         /// <summary>
-        /// Retorna um parceiro cadastrado de acordo com o id informado.
+        /// Returns a registered partner according to the entered id.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

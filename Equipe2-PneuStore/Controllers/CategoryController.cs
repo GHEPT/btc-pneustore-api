@@ -20,7 +20,7 @@ namespace ApiPneuStore.Controllers
         }
 
         /// <summary>
-        /// Retorna a lista de categorias cadastradas no banco de dados.
+        /// Returns the list of categories registered in the database.
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -29,7 +29,7 @@ namespace ApiPneuStore.Controllers
         public IActionResult Index() => ApiOk(_service.All());
 
         /// <summary>
-        /// Retorna a categoria buscada de acordo com o id informado.
+        /// Returns the searched category according to the id informed.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

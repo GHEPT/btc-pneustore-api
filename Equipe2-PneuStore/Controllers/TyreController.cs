@@ -20,7 +20,7 @@ namespace ApiPneuStore.Controllers
         }
 
         /// <summary>
-        /// Retorna a lista com todos os pneus existentes no banco de dados.
+        /// Returns the list of all tires in the database.
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -29,7 +29,7 @@ namespace ApiPneuStore.Controllers
         public IActionResult Index() => ApiOk(_service.All());
 
         /// <summary>
-        /// Retorna um pneu específico de acordo com o id informado.
+        /// Returns a specific tire according to the id entered.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
