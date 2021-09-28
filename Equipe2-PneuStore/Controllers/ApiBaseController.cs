@@ -5,7 +5,6 @@ namespace ApiPneuStore.Controllers
 {
     public abstract class ApiBaseController : ControllerBase
     {
-
         #region privateMethods
         APIResponse<T> CustomResponse<T>(T Results, bool Succeed = true, string Message = "") =>
             new APIResponse<T>()

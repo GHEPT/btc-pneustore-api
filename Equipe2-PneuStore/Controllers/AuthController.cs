@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
-
+using System.Net.Mime;
 
 namespace Equipe2_PneuStore.Controllers
 {
@@ -57,7 +57,6 @@ namespace Equipe2_PneuStore.Controllers
                 return ApiBadRequest(e, e.Message);
             }
         }
-
     }
 }
 

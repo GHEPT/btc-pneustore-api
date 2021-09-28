@@ -41,6 +41,5 @@ namespace ApiPneuStore.Controllers
         [Authorize]
         [Route("{id}")]
         public IActionResult Index(int? id) => ApiOk(_service.Get(id));
-
     }
 }

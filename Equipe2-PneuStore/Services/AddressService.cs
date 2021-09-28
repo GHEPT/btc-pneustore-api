@@ -1,30 +1,30 @@
-﻿using ApiPneuStore.Models;
-using Equipe2_PneuStore.Data;
+﻿using Equipe2_PneuStore.Data;
+using Equipe2_PneuStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Equipe2_PneuStore.Services
 {
-    public class PartnerService : IPartnerService
+    public class AddressService : IAddressService
     {
         Context _context;
         //construtor
-        public PartnerService(Context context)
+        public AddressService(Context context)
         {
             _context = context;
         }
 
-        public List<Partner> All()
+        public List<Address> All()
         {
-            return _context.Partner.ToList();
+            return _context.Address.ToList();
         }
 
-        public bool Create(Partner partner)
+        public bool Create(Address address)
         {
             try
             {
-                _context.Add(partner);
+                _context.Add(address);
                 _context.SaveChanges();
                 return true;
             }
@@ -34,19 +34,19 @@ namespace Equipe2_PneuStore.Services
             }
         }
 
-        public Partner Get(int? id)
+        public Address Get(int? id)
         {
-            return _context.Partner.FirstOrDefault(p => p.Id == id);
+            return _context.Address.FirstOrDefault(a => a.Id == id);
         }
 
-        public bool Update(Partner partner)
+        public bool Update(Address address)
         {
             try
             {
-                if (!_context.Partner.Any(p => p.Id == partner.Id))
-                    throw new Exception("Item não encontrado");
+                if (!_context.Address.Any(a => a.Id == address.Id))
+                    throw new Exception("Endereço não existente!");
 
-                _context.Update(partner);
+                _context.Update(address);
                 _context.SaveChanges();
                 return true;
             }

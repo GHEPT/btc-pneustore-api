@@ -1,30 +1,35 @@
-﻿using ApiPneuStore.Models;
-using Equipe2_PneuStore.Data;
+﻿using Equipe2_PneuStore.Data;
+using Equipe2_PneuStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Equipe2_PneuStore.Services
 {
-    public class PartnerService : IPartnerService
+    public class ClientService : IClientService
     {
         Context _context;
         //construtor
-        public PartnerService(Context context)
+        public ClientService(Context context)
         {
             _context = context;
         }
 
-        public List<Partner> All()
+        public List<Client> All()
         {
-            return _context.Partner.ToList();
+            return _context.Client.ToList();
         }
 
-        public bool Create(Partner partner)
+        public Client Get(int? id)
+        {
+            return _context.Client.FirstOrDefault(c => c.Id == id);
+        }
+        
+        public bool Create(Client client)
         {
             try
             {
-                _context.Add(partner);
+                _context.Add(client);
                 _context.SaveChanges();
                 return true;
             }
@@ -34,19 +39,14 @@ namespace Equipe2_PneuStore.Services
             }
         }
 
-        public Partner Get(int? id)
-        {
-            return _context.Partner.FirstOrDefault(p => p.Id == id);
-        }
-
-        public bool Update(Partner partner)
+        public bool Update(Client client)
         {
             try
             {
-                if (!_context.Partner.Any(p => p.Id == partner.Id))
-                    throw new Exception("Item não encontrado");
+                if (!_context.Client.Any(c => c.Id == client.Id))
+                    throw new Exception("Cliente não existente!");
 
-                _context.Update(partner);
+                _context.Update(client);
                 _context.SaveChanges();
                 return true;
             }
