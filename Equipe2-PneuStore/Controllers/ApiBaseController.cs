@@ -23,8 +23,8 @@ namespace ApiPneuStore.Controllers
 
         #endregion privateMethods
     
-        protected OkObjectResult ApiOk<T>(T Results) =>
-          Ok(CustomResponse(Results));
+        protected OkObjectResult ApiOk<T>(T Results, string Message = "") =>
+          Ok(CustomResponse(Results, true, Message));
 
         protected OkObjectResult ApiOk(string Message = "") =>
             Ok(CustomResponse(true, Message));
