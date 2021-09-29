@@ -42,6 +42,7 @@ namespace Equipe2_PneuStore
                         Contact = new OpenApiContact
                         {
                             Name = "Eduardo Meireles, Eduardo Teodoro, Josué Barros e Thales Ribeiro",
+                            Url = new Uri("https://github.com/CodeThales/btc-pneustore-api/blob/main/README.md"),
                         },
 
                         License = new OpenApiLicense
