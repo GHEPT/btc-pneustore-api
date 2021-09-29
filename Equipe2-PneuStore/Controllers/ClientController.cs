@@ -2,6 +2,7 @@
 using Equipe2_PneuStore.Models;
 using Equipe2_PneuStore.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -26,6 +27,7 @@ namespace Equipe2_PneuStore.Controllers
         //Endpoint de acesso ao cadastro de um cliente pelo id
         [HttpGet]
         [Authorize]
+        [Route("{id}")]
         public IActionResult Index(int? id) =>
             _service.Get(id) == null ?
             ApiNotFound("Cliente não encontrado.") :
@@ -34,10 +36,13 @@ namespace Equipe2_PneuStore.Controllers
         //Endpoint de cadastro de um novo cliente
         [HttpPost]
         [Authorize]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult Create([FromBody] Client client)
         {
             return _service.Create(client) ?
-               ApiOk("Cadastro realizado com sucesso.") :
+               ApiOk(client, "Cadastro realizado com Sucesso") :
                ApiNotFound("Erro ao cadasatrar cliente.");
         }
 
