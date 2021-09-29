@@ -67,6 +67,8 @@ namespace Equipe2_PneuStore
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IPartnerService, PartnerService>();
             services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IClientService, ClientService>();
+            services.AddTransient<IAddressService, AddressService>();
 
             services.AddDefaultIdentity<IdentityUser>()                
                 .AddEntityFrameworkStores<Context>();
