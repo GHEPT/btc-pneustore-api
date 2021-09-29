@@ -93,6 +93,7 @@ namespace Equipe2_PneuStore.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [HttpDelete]
         [Authorize]
+        [Route("{id}")]
         public IActionResult Delete(int? id) =>
             _service.Delete(id) ?
             ApiOk("Endereço excluído com sucesso.") :
