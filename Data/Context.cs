@@ -1,5 +1,4 @@
-﻿using ApiPneuStore.Models;
-using Equipe2_PneuStore.Models;
+﻿using Equipe2_PneuStore.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

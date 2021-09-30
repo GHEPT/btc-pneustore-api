@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Equipe2_PneuStore.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210928221751_1")]
+    [Migration("20210930232831_1")]
     partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,75 +21,49 @@ namespace Equipe2_PneuStore.Migrations
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ApiPneuStore.Models.Category", b =>
+            modelBuilder.Entity("AddressClient", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TyreId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("TyreId1")
+                    b.Property<int>("AddressId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("TyreId1");
+                    b.HasKey("AddressId", "ClientId");
 
-                    b.ToTable("Category");
+                    b.HasIndex("ClientId");
+
+                    b.ToTable("AddressClient");
                 });
 
-            modelBuilder.Entity("ApiPneuStore.Models.Partner", b =>
+            modelBuilder.Entity("AddressPartner", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("AddressId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PartnerId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("AddressId", "PartnerId");
 
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasIndex("PartnerId");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Partner");
+                    b.ToTable("AddressPartner");
                 });
 
-            modelBuilder.Entity("ApiPneuStore.Models.Tyre", b =>
+            modelBuilder.Entity("CategoryTyre", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Brand")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TyreId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("CategoryId", "TyreId");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasIndex("TyreId");
 
-                    b.Property<string>("Model")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tyre");
+                    b.ToTable("CategoryTyre");
                 });
 
             modelBuilder.Entity("Equipe2_PneuStore.Models.Address", b =>
@@ -101,9 +75,6 @@ namespace Equipe2_PneuStore.Migrations
 
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ClientId")
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Neighborhood")
                         .HasColumnType("nvarchar(max)");
@@ -120,14 +91,107 @@ namespace Equipe2_PneuStore.Migrations
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ZipCode")
-                        .HasColumnType("int");
+                    b.Property<string>("ZipCode")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClientId");
-
                     b.ToTable("Address");
+                });
+
+            modelBuilder.Entity("Equipe2_PneuStore.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("Equipe2_PneuStore.Models.Client", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AddressId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Client");
+                });
+
+            modelBuilder.Entity("Equipe2_PneuStore.Models.Partner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AddressId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Partner");
+                });
+
+            modelBuilder.Entity("Equipe2_PneuStore.Models.Tyre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Brand")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Model")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tyre");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -193,10 +257,6 @@ namespace Equipe2_PneuStore.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -248,8 +308,6 @@ namespace Equipe2_PneuStore.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -336,44 +394,49 @@ namespace Equipe2_PneuStore.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Equipe2_PneuStore.Models.Client", b =>
+            modelBuilder.Entity("AddressClient", b =>
                 {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+                    b.HasOne("Equipe2_PneuStore.Models.Address", null)
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<string>("AddressId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("CPF")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("Client");
+                    b.HasOne("Equipe2_PneuStore.Models.Client", null)
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("ApiPneuStore.Models.Category", b =>
+            modelBuilder.Entity("AddressPartner", b =>
                 {
-                    b.HasOne("ApiPneuStore.Models.Tyre", "Tyre")
-                        .WithMany("Category")
-                        .HasForeignKey("TyreId1");
+                    b.HasOne("Equipe2_PneuStore.Models.Address", null)
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Tyre");
+                    b.HasOne("Equipe2_PneuStore.Models.Partner", null)
+                        .WithMany()
+                        .HasForeignKey("PartnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Equipe2_PneuStore.Models.Address", b =>
+            modelBuilder.Entity("CategoryTyre", b =>
                 {
-                    b.HasOne("Equipe2_PneuStore.Models.Client", "Client")
-                        .WithMany("Address")
-                        .HasForeignKey("ClientId");
+                    b.HasOne("Equipe2_PneuStore.Models.Category", null)
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Client");
+                    b.HasOne("Equipe2_PneuStore.Models.Tyre", null)
+                        .WithMany()
+                        .HasForeignKey("TyreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -425,16 +488,6 @@ namespace Equipe2_PneuStore.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("ApiPneuStore.Models.Tyre", b =>
-                {
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("Equipe2_PneuStore.Models.Client", b =>
-                {
-                    b.Navigation("Address");
                 });
 #pragma warning restore 612, 618
         }

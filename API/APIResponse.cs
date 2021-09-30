@@ -1,4 +1,4 @@
-﻿namespace ApiPneuStore.API
+﻿namespace Equipe2_PneuStore.API
 {
     public class APIResponse<T>
     {

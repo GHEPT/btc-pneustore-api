@@ -8,6 +8,25 @@ namespace Equipe2_PneuStore.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Address",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ZipCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Number1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Number2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Neighborhood = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Address", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -26,12 +45,6 @@ namespace Equipe2_PneuStore.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CPF = table.Column<int>(type: "int", nullable: true),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    AddressId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -53,6 +66,36 @@ namespace Equipe2_PneuStore.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Category",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Category", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Client",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CPF = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AddressId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Client", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Partner",
                 columns: table => new
                 {
@@ -60,7 +103,7 @@ namespace Equipe2_PneuStore.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    AddressId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -77,7 +120,8 @@ namespace Equipe2_PneuStore.Migrations
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -103,32 +147,6 @@ namespace Equipe2_PneuStore.Migrations
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Address",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ZipCode = table.Column<int>(type: "int", nullable: false),
-                    Number1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Number2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Neighborhood = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    State = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClientId = table.Column<string>(type: "nvarchar(450)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Address", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Address_AspNetUsers_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -217,30 +235,86 @@ namespace Equipe2_PneuStore.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Category",
+                name: "AddressClient",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TyreId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TyreId1 = table.Column<int>(type: "int", nullable: true)
+                    AddressId = table.Column<int>(type: "int", nullable: false),
+                    ClientId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Category", x => x.Id);
+                    table.PrimaryKey("PK_AddressClient", x => new { x.AddressId, x.ClientId });
                     table.ForeignKey(
-                        name: "FK_Category_Tyre_TyreId1",
-                        column: x => x.TyreId1,
+                        name: "FK_AddressClient_Address_AddressId",
+                        column: x => x.AddressId,
+                        principalTable: "Address",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AddressClient_Client_ClientId",
+                        column: x => x.ClientId,
+                        principalTable: "Client",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AddressPartner",
+                columns: table => new
+                {
+                    AddressId = table.Column<int>(type: "int", nullable: false),
+                    PartnerId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AddressPartner", x => new { x.AddressId, x.PartnerId });
+                    table.ForeignKey(
+                        name: "FK_AddressPartner_Address_AddressId",
+                        column: x => x.AddressId,
+                        principalTable: "Address",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AddressPartner_Partner_PartnerId",
+                        column: x => x.PartnerId,
+                        principalTable: "Partner",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CategoryTyre",
+                columns: table => new
+                {
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    TyreId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CategoryTyre", x => new { x.CategoryId, x.TyreId });
+                    table.ForeignKey(
+                        name: "FK_CategoryTyre_Category_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Category",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CategoryTyre_Tyre_TyreId",
+                        column: x => x.TyreId,
                         principalTable: "Tyre",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Address_ClientId",
-                table: "Address",
+                name: "IX_AddressClient_ClientId",
+                table: "AddressClient",
                 column: "ClientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AddressPartner_PartnerId",
+                table: "AddressPartner",
+                column: "PartnerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -282,15 +356,18 @@ namespace Equipe2_PneuStore.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Category_TyreId1",
-                table: "Category",
-                column: "TyreId1");
+                name: "IX_CategoryTyre_TyreId",
+                table: "CategoryTyre",
+                column: "TyreId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Address");
+                name: "AddressClient");
+
+            migrationBuilder.DropTable(
+                name: "AddressPartner");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -308,7 +385,13 @@ namespace Equipe2_PneuStore.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Category");
+                name: "CategoryTyre");
+
+            migrationBuilder.DropTable(
+                name: "Client");
+
+            migrationBuilder.DropTable(
+                name: "Address");
 
             migrationBuilder.DropTable(
                 name: "Partner");
@@ -318,6 +401,9 @@ namespace Equipe2_PneuStore.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Category");
 
             migrationBuilder.DropTable(
                 name: "Tyre");

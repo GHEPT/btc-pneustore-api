@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ApiPneuStore.Models
+namespace Equipe2_PneuStore.Models
 {
     public class Tyre
     {
@@ -15,7 +15,9 @@ namespace ApiPneuStore.Models
         public double Price { get; set; }
         
         public string Description { get; set; }
-        
+
+        public int CategoryId { get; set; }
+
         public List<Category> Category { get; set; }
     }
 }

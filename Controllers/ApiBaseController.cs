@@ -1,7 +1,7 @@
-﻿using ApiPneuStore.API;
+﻿using Equipe2_PneuStore.API;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiPneuStore.Controllers
+namespace Equipe2_PneuStore.Controllers
 {
     public abstract class ApiBaseController : ControllerBase
     {

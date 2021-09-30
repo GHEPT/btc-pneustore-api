@@ -1,4 +1,4 @@
-﻿using ApiPneuStore.Models;
+﻿using Equipe2_PneuStore.Models;
 using Equipe2_PneuStore.Data;
 using System;
 using System.Collections.Generic;

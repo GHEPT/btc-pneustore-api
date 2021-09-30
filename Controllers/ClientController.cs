@@ -1,4 +1,4 @@
-﻿using ApiPneuStore.Controllers;
+﻿using Equipe2_PneuStore.Controllers;
 using Equipe2_PneuStore.Models;
 using Equipe2_PneuStore.Services;
 using Microsoft.AspNetCore.Authorization;

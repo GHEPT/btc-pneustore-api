@@ -1,13 +1,14 @@
-﻿namespace ApiPneuStore.Models
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace Equipe2_PneuStore.Models
 {
     public class Category
     {
         public int Id { get; set; }
-       
+
         public string Type { get; set; }
-        
-        public string TyreId { get; set; }        
-        
-        public Tyre Tyre { get; set; }
+
+        public List<Tyre> Tyre { get; set; }
     }
 }
