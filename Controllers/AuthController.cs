@@ -23,6 +23,8 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Creates a new user for the API.
+        /// Required params : userName, passwordHash
+        /// userName does not accept special characters
         /// </summary>
         /// <param name="identityUser"></param>
         /// <returns></returns>
@@ -34,7 +36,7 @@ namespace Equipe2_PneuStore.Controllers
             IdentityResult result = _service.Create(identityUser).Result;
             identityUser.PasswordHash = null;
             return result.Succeeded ?
-                ApiOk(identityUser) :
+                ApiOk(identityUser,"Usuário criado com sucesso") :
                 ApiBadRequest("Erro ao tentar criar usuário!");
         }
 
