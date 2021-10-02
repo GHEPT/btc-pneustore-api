@@ -58,8 +58,8 @@ namespace Equipe2_PneuStore.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [HttpPost]
-        [Authorize]
+        [AllowAnonymous]
+        [HttpPost]        
         public IActionResult Create([FromBody] Client client)
         {
             return _service.Create(client) ?

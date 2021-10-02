@@ -1,4 +1,5 @@
-﻿using Equipe2_PneuStore.Services;
+﻿using Equipe2_PneuStore.Models;
+using Equipe2_PneuStore.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,8 +25,7 @@ namespace Equipe2_PneuStore.Controllers
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [Authorize]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]        
         [HttpGet]
         public IActionResult Index() => ApiOk(_service.All());
 
@@ -37,9 +37,20 @@ namespace Equipe2_PneuStore.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [HttpGet]
-        [Authorize]
+        [HttpGet]        
         [Route("{id}")]
         public IActionResult Index(int? id) => ApiOk(_service.Get(id));
+
+
+        [HttpPost]
+        [Authorize]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public IActionResult Create([FromBody] Tyre tyre)
+        {
+            return _service.Create(tyre) ?
+               ApiOk(tyre, "Cadastro realizado com Sucesso") :
+               ApiNotFound("Erro ao cadasatrar pneu.");
+        }
     }
 }

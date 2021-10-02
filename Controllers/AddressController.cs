@@ -27,8 +27,7 @@ namespace Equipe2_PneuStore.Controllers
         //Endpoint de acesso aos cadastros de endereços
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [HttpGet]
-        [Authorize]
+        [HttpGet]        
         public IActionResult Index() => ApiOk(_service.All());
 
         /// <summary>
@@ -37,8 +36,7 @@ namespace Equipe2_PneuStore.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         //Endpoint de acesso ao cadastro de um endereço pelo id
-        [HttpGet]
-        [Authorize]
+        [HttpGet]        
         [Route("{id}")]
         public IActionResult Index(int? id) =>
             _service.Get(id) == null ?
