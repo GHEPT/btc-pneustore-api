@@ -11,9 +11,18 @@ namespace Equipe2_PneuStore.Models
 
         public string PhoneNumber { get; set; }
 
-        public int AddressId { get; set; }
+        [Required(ErrorMessage = "Logradouro Obrigatório")]
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
 
-        public List<Address> Address { get; set; }
+        [Required(ErrorMessage = "CEP Obrigatório")]
+        public string ZipCode { get; set; }
+
+        [Required(ErrorMessage = "Cidade Obrigatório")]
+        public string City { get; set; }
+
+        [Required(ErrorMessage = "Estado Obrigatório")]
+        public string State { get; set; }
 
     }
 }

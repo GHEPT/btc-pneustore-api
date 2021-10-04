@@ -9,6 +9,5 @@ namespace Equipe2_PneuStore.Models
 
         public string Type { get; set; }
 
-        public List<Tyre> Tyre { get; set; }
     }
 }

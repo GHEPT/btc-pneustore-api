@@ -16,6 +16,6 @@ namespace Equipe2_PneuStore.Data
         
         public DbSet<Client> Client { get; set; }
         
-        public DbSet<Address> Address { get; set; }
+        
     }
 }

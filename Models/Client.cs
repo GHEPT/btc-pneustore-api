@@ -20,11 +20,18 @@ namespace Equipe2_PneuStore.Models
 
         [Required(ErrorMessage = "Data de Nascimento Obrigatório")]
         [DataType(DataType.Date)]
+
         public DateTime BirthDate { get; set; }
 
-        public int AddressId { get; set; }
+        public string Address1 { get; set; }
 
-        public List<Address> Address { get; set; }
+        public string Address2 { get; set; }
+
+        public string ZipCode { get; set; }   
+        
+        public string City { get; set; }
+
+        public string State { get; set; }
 
     }
 }
