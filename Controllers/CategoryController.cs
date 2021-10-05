@@ -21,6 +21,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Returns the list of categories registered in the database.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -30,6 +31,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Returns the searched category according to the id informed.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

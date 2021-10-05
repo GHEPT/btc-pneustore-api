@@ -23,6 +23,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Returns the list of customers registered in the database.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <returns></returns>
         //Endpoint de acesso ao cadastro de todos os clientes
@@ -34,6 +35,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Returns the search customer according to the given id.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -51,6 +53,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Sends the registration information of a new customer to the database.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <param name="client"></param>
         /// <returns></returns>
@@ -69,6 +72,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Sends a customer's update information to the database according to the customer entered.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <param name="client"></param>
         /// <returns></returns>
@@ -87,6 +91,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Deletes a customer from the database according to the given id.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

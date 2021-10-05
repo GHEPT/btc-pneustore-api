@@ -23,9 +23,9 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Creates a new user for the API.
-        /// Required params : userName, passwordHash.
-        /// userName does not accept special characters.
-        /// passwordHash must have uppercase, lowercase and special character.
+        /// Required params : userName and passwordHash.
+        /// userName does not accept accents.
+        /// passwordHash must have uppercase, lowercase, number and special character.
         /// </summary>
         /// <param name="identityUser"></param>
         /// <returns></returns>
@@ -43,6 +43,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Get an access token for an authorized user.
+        /// Required params : userName and passwordHash registered in the /Auth/Register route.
         /// </summary>
         /// <param name="identityUser"></param>
         /// <returns></returns>

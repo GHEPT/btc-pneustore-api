@@ -21,6 +21,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Returns the list of registered partners in the database.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -31,6 +32,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Returns a registered partner according to the entered id.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

@@ -22,6 +22,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Returns the list of all tires in the database.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -31,6 +32,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Returns a specific tire according to the id entered.
+        /// Must be logged in and with valid token.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -50,7 +52,7 @@ namespace Equipe2_PneuStore.Controllers
         {
             return _service.Create(tyre) ?
                ApiOk(tyre, "Cadastro realizado com Sucesso") :
-               ApiNotFound("Erro ao cadasatrar pneu.");
+               ApiNotFound("Erro ao cadastrar pneu.");
         }
     }
 }
