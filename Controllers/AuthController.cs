@@ -43,7 +43,7 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Get an access token for an authorized user.
-        /// Required params : userName and passwordHash registered in the /Auth/Register route.
+        /// Required params: userName and passwordHash registered in the /Auth/Register route.
         /// </summary>
         /// <param name="identityUser"></param>
         /// <returns></returns>
