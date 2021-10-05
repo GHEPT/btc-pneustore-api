@@ -22,23 +22,19 @@ namespace Equipe2_PneuStore.Controllers
 
         /// <summary>
         /// Returns the list of all tires in the database.
-        /// Must be logged in and with valid token.
         /// </summary>
         /// <returns></returns>
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]        
+        [ProducesResponseType(StatusCodes.Status200OK)]       
         [HttpGet]
         public IActionResult Index() => ApiOk(_service.All());
 
         /// <summary>
         /// Returns a specific tire according to the id entered.
-        /// Must be logged in and with valid token.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [HttpGet]        
         [Route("{id}")]
         public IActionResult Index(int? id) => ApiOk(_service.Get(id));

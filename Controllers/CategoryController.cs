@@ -25,7 +25,6 @@ namespace Equipe2_PneuStore.Controllers
         /// </summary>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]        
         [HttpGet]
         public IActionResult Index() => ApiOk(_service.All());
 
@@ -36,8 +35,7 @@ namespace Equipe2_PneuStore.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]        
+        [ProducesResponseType(StatusCodes.Status404NotFound)]      
         [HttpGet]
         [Route("{id}")]
         public IActionResult Index(int? id) => ApiOk(_service.Get(id));
