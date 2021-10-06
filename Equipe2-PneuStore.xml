@@ -4,46 +4,12 @@
         <name>Equipe2-PneuStore</name>
     </assembly>
     <members>
-        <member name="M:Equipe2_PneuStore.Controllers.AddressController.Index">
-            <summary>
-            Returns a list of addresses registered in the database.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Equipe2_PneuStore.Controllers.AddressController.Index(System.Nullable{System.Int32})">
-            <summary>
-            Returns an address registered in the database according to the entered id.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Equipe2_PneuStore.Controllers.AddressController.Create(Equipe2_PneuStore.Models.Address)">
-            <summary>
-            Sends the registration information of a new address to the database.
-            </summary>
-            <param name="address"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Equipe2_PneuStore.Controllers.AddressController.Update(Equipe2_PneuStore.Models.Address)">
-            <summary>
-            Sends an address update information to the database according to the address entered.
-            </summary>
-            <param name="address"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Equipe2_PneuStore.Controllers.AddressController.Delete(System.Nullable{System.Int32})">
-            <summary>
-            Deletes an address from the database according to the given id.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
         <member name="M:Equipe2_PneuStore.Controllers.AuthController.Register(Microsoft.AspNetCore.Identity.IdentityUser)">
             <summary>
             Creates a new user for the API.
-            Required params : userName, passwordHash.
-            userName does not accept special characters.
-            passwordHash must have uppercase, lowercase and special character.
+            Required params : userName and passwordHash.
+            userName does not accept accents.
+            passwordHash must have uppercase, lowercase, number and special character.
             </summary>
             <param name="identityUser"></param>
             <returns></returns>
@@ -51,6 +17,7 @@
         <member name="M:Equipe2_PneuStore.Controllers.AuthController.Token(Microsoft.AspNetCore.Identity.IdentityUser)">
             <summary>
             Get an access token for an authorized user.
+            Required params: userName and passwordHash registered in the /Auth/Register route.
             </summary>
             <param name="identityUser"></param>
             <returns></returns>
@@ -58,12 +25,14 @@
         <member name="M:Equipe2_PneuStore.Controllers.CategoryController.Index">
             <summary>
             Returns the list of categories registered in the database.
+            Must be logged in and with valid token.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Equipe2_PneuStore.Controllers.CategoryController.Index(System.Nullable{System.Int32})">
             <summary>
             Returns the searched category according to the id informed.
+            Must be logged in and with valid token.
             </summary>
             <param name="id"></param>
             <returns></returns>
@@ -71,12 +40,14 @@
         <member name="M:Equipe2_PneuStore.Controllers.ClientController.Index">
             <summary>
             Returns the list of customers registered in the database.
+            Must be logged in and with valid token.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Equipe2_PneuStore.Controllers.ClientController.Index(System.Nullable{System.Int32})">
             <summary>
             Returns the search customer according to the given id.
+            Must be logged in and with valid token.
             </summary>
             <param name="id"></param>
             <returns></returns>
@@ -84,6 +55,7 @@
         <member name="M:Equipe2_PneuStore.Controllers.ClientController.Create(Equipe2_PneuStore.Models.Client)">
             <summary>
             Sends the registration information of a new customer to the database.
+            Must be logged in and with valid token.
             </summary>
             <param name="client"></param>
             <returns></returns>
@@ -91,6 +63,7 @@
         <member name="M:Equipe2_PneuStore.Controllers.ClientController.Update(Equipe2_PneuStore.Models.Client)">
             <summary>
             Sends a customer's update information to the database according to the customer entered.
+            Must be logged in and with valid token.
             </summary>
             <param name="client"></param>
             <returns></returns>
@@ -98,6 +71,7 @@
         <member name="M:Equipe2_PneuStore.Controllers.ClientController.Delete(System.Nullable{System.Int32})">
             <summary>
             Deletes a customer from the database according to the given id.
+            Must be logged in and with valid token.
             </summary>
             <param name="id"></param>
             <returns></returns>
