@@ -67,7 +67,7 @@ namespace Equipe2_PneuStore.Controllers
         {
             return _service.Create(client) ?
                ApiOk(client, "Cadastro realizado com Sucesso") :
-               ApiNotFound("Erro ao cadasatrar cliente.");
+               ApiNotFound("Erro ao cadastrar cliente.");
         }
 
         /// <summary>

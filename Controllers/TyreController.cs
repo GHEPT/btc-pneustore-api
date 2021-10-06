@@ -43,7 +43,6 @@ namespace Equipe2_PneuStore.Controllers
         [HttpPost]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult Create([FromBody] Tyre tyre)
         {
             return _service.Create(tyre) ?
