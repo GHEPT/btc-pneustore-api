@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/equipe2-pneustoredbserver/databases/Equipe2-PneuStore_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:PneuStore",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

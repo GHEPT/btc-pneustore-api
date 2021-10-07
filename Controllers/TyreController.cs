@@ -26,6 +26,7 @@ namespace Equipe2_PneuStore.Controllers
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]       
         [HttpGet]
+        [Authorize]
         public IActionResult Index() => ApiOk(_service.All());
 
         /// <summary>
