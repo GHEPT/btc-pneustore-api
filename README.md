@@ -1,20 +1,19 @@
 [![Site do Projeto](https://i.imgur.com/5U1yeQ0.png)](https://bluememers.herokuapp.com/)
 # Bootcamp | PneuStore
 *Clique na logo para visitar a página do projeto*
-## Projeto de checkout de vendas   
+## Projeto de checkout de vendas
 
 ![Badge](https://img.shields.io/date/1630014400)
 
-### 🥳 Eu já desconfiava que essa ideia seria muito bem aceita entre os colegas da classe, mas não imaginava que as outras turmas e módulos também fossem curtir tanto!
+### 
 
-# Funcionalidades
+# Propostas
 
-- [x] Home
-- [x] Criar Meme 
-- [x] Visualizar Todos
-- [x] Visualizar Meme
-- [X] Atualizar
-- [x] Deletar
+- [x] Layout Clean
+- [x] Barra de Progresso no Checkout
+- [x] Destaque na Opção de Escolha dos Serviços 
+- [x] Implementação de Modal para Endereços
+- [x] Renderização Otimizada 
 
 :memo: Conteúdos
 =================
