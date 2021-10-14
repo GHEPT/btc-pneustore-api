@@ -23,6 +23,7 @@ namespace Equipe2_PneuStore.Models
 
         [Required(ErrorMessage = "Estado Obrigatório")]
         public string State { get; set; }
+        public int Note { get; set; }
 
     }
 }

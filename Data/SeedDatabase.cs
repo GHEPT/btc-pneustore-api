@@ -33,6 +33,23 @@ namespace Equipe2_PneuStore.Data
                     context.Category.Add(new Category { Type = "Caminhão/Ônibus" });
                     context.Category.Add(new Category { Type = "Motocicleta" });
                 }
+
+                if (!context.Partner.Any())
+                {
+                    for (var i = 1; i <= 3; i++)
+                    {
+                        context.Partner.Add(new Partner
+                        {
+                            Name = $"Parceiro {i}",
+                            PhoneNumber = $"({i}{i}) {i}{i}{i}{i}{i} - {i}{i}{i}{i}",
+                            Address1 = $"Endereço {i}",
+                            ZipCode = $"{i}{i}{i}{i}{i} - {i}{i}{i}",
+                            City = $"Cidade {i}",
+                            State = $"Estado {i}",
+                            Note = 5
+                        });
+                    }
+                }
                                
                 context.SaveChanges();
             }
