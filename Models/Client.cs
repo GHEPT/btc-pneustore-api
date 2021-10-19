@@ -14,6 +14,8 @@ namespace Equipe2_PneuStore.Models
 
         [Required(ErrorMessage = "CPF Obrigatório")]
         public string CPF { get; set; }
+        [Required(ErrorMessage = "E-mail Obrigatório")]
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Telefone Obrigatório")]
         public string Phone { get; set; }
