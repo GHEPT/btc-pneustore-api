@@ -82,7 +82,7 @@ Não podia faltar o nosso querido Discord! Criamos um server para que o assunto 
 ㊗️ Nossos Agradecimentos
 ================
 
-Somos gratos a todos os envolvidos nesse bootcamp que nos proporcionou uma oportunidade de vivenciar uma rotina real de DEV, somando mais um tijolinho na construçao da nossa carreira, dando uma bagagem muito bacana ra nós, devs juniores!
+Somos gratos a todos os envolvidos nesse bootcamp que nos proporcionou uma oportunidade de vivenciar uma rotina real de DEV, somando mais um tijolinho na construçao da nossa carreira, dando uma bagagem muito bacana pra nós, devs juniores!
 
 [![BLUEEDTECH](https://i.imgur.com/PUFuODa.gif)](https://blueedtech.com.br/)
 
