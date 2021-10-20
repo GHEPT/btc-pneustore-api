@@ -64,12 +64,14 @@ Utilizamos o Scrum, uma metologia ágil bastante presente hoje e dia nas organiz
 ================
 
 [![Notion_Kanban](https://i.imgur.com/SjWLVA6.png)](https://www.notion.so/45233b2ccaaa42ee996ccb6a0c510384?v=293f797e8aa3445f8d24eef331f6072c)
+
 A ferramenta de gerenciamento de tarefas que utilizamos neste projeto foi o 🗒️ Notion. Durante as dailys com o time o Scrum Master incluia tarefas para o dia e assim fomos avançando semana a semana.
 
 🥇 Versionamento de Código e Branches
 ================
 
 [![Github](https://i.imgur.com/KsfhdEd.png)](https://github.com/GHEPT/btc-pneustore-api)
+
 Na nossa equipe temos integrantes que já estão no mercado de trabalho dev e, graças a eles, pudemos replicar as boas práticas de versionamento de código do mercado de trabalho, usando duas branches: uma dev e outra main. Também fizemos o uso do recurso "fork" do github, de onde comitamos as atualizações para a nuvem da nossa aplicação. 🤙 
 O time se adaptou muito fácil e o versionamento aconteceu sem maiores problemas, com mais de 60 commits no back-end e sem qualquer conflito em merges!! ✈️
 
@@ -77,6 +79,7 @@ O time se adaptou muito fácil e o versionamento aconteceu sem maiores problemas
 ================
 
 ![Discord](https://i.imgur.com/4VzqxbZ.png)
+
 Não podia faltar o nosso querido Discord! Criamos um server para que o assunto pudesse fluir fora dos horários de aula e também o usamos para compartilhar pontos importantes para o desenvolvimento do projeto, com canais como: backlog, git, bugs, po_information, react, csharp... 🎉
 
 ㊗️ Nossos Agradecimentos
