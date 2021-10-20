@@ -57,8 +57,8 @@ Utilizamos o Scrum, uma metologia ágil bastante presente hoje e dia nas organiz
 [![Josucka](https://i.imgur.com/WUDSy7y.png)](https://github.com/Josucka)
 [![CodeThales](https://i.imgur.com/ba5g1d3.png)](https://github.com/CodeThales)
 [![EduTeodoro](https://i.imgur.com/t8YKd7j.png)](https://github.com/GHEPT)
-[![Vini]
-[![Igor]
+[![VictorLombardi](https://i.imgur.com/MSr8ZHw.png)](https://github.com/vitorlombardi)
+[![IgorPrati](https://i.imgur.com/lgRs6Sb.png)](https://github.com/igorprati)
 
 🕋 Metodologia Kanban
 ================
@@ -72,3 +72,32 @@ A ferramenta de gerenciamento de tarefas que utilizamos neste projeto foi o 🗒
 [![Github](https://i.imgur.com/KsfhdEd.png)](https://github.com/GHEPT/btc-pneustore-api)
 Na nossa equipe temos integrantes que já estão no mercado de trabalho dev e, graças a eles, pudemos replicar as boas práticas de versionamento de código do mercado de trabalho, usando duas branches: uma dev e outra main. Também fizemos o uso do recurso "fork" do github, de onde comitamos as atualizações para a nuvem da nossa aplicação. 🤙 
 O time se adaptou muito fácil e o versionamento aconteceu sem maiores problemas, com mais de 60 commits no back-end e sem qualquer conflito em merges!! ✈️
+
+💻 Server no Discord 
+================
+
+![Discord](https://i.imgur.com/4VzqxbZ.png)
+Não podia faltar o nosso querido Discord! Criamos um server para que o assunto pudesse fluir fora dos horários de aula e também o usamos para compartilhar pontos importantes para o desenvolvimento do projeto, com canais como: backlog, git, bugs, po_information, react, csharp... 🎉
+
+㊗️ Nossos Agradecimentos
+================
+
+Somos gratos a todos os envolvidos nesse bootcamp que nos proporcionou uma oportunidade de vivenciar uma rotina real de DEV, somando mais um tijolinho na construçao da nossa carreira, dando uma bagagem muito bacana ra nós, devs juniores!
+
+[![BLUEEDTECH](https://i.imgur.com/PUFuODa.gif)](https://blueedtech.com.br/)
+
+💙 **Blue Edtech**
+
+[![GrupoLevel](https://i.imgur.com/xuo0up0.png)](https://www.grupolevel.com.br/empresas)
+
+💜 **Grupo Level | PneuStore**
+
+[![Violigon](https://i.imgur.com/cUUEiiY.png)](https://github.com/violigon)
+
+🧠 **Vinícius Oliveira Gonçalves | Ele, o Brabo do Bootcamp!**
+
+[![ThiCode](https://i.imgur.com/camnUvJ.png)](https://github.com/codethi)
+
+🧔 **Thiago Lima | Ele, papai do ano!** 
+ 
+
