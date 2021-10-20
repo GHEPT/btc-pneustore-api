@@ -66,8 +66,8 @@ namespace Equipe2_PneuStore.Controllers
         public IActionResult Create([FromBody] Client client)
         {
             return _service.Create(client) ?
-               ApiOk(client, "Cadastro realizado com Sucesso") :
-               ApiNotFound("Erro ao cadasatrar cliente.");
+               ApiOk(client, "Cadastro realizado com Sucesso.") :
+               ApiNotFound("Erro ao cadastrar cliente.");
         }
 
         /// <summary>

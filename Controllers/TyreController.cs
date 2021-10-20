@@ -39,7 +39,11 @@ namespace Equipe2_PneuStore.Controllers
         [Route("{id}")]
         public IActionResult Index(int? id) => ApiOk(_service.Get(id));
 
-
+        /// <summary>
+        /// Sends the registration information of a new tyre to the database.
+        /// </summary>
+        /// <param name="tyre"></param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -47,7 +51,7 @@ namespace Equipe2_PneuStore.Controllers
         public IActionResult Create([FromBody] Tyre tyre)
         {
             return _service.Create(tyre) ?
-               ApiOk(tyre, "Cadastro realizado com Sucesso") :
+               ApiOk(tyre, "Cadastro realizado com Sucesso.") :
                ApiNotFound("Erro ao cadastrar pneu.");
         }
     }

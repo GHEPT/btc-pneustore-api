@@ -58,7 +58,7 @@ namespace Equipe2_PneuStore.Controllers
             }
             catch (Exception e)
             {
-                return ApiBadRequest(e, e.Message);
+                return ApiBadRequest(401, e.Message);
             }
         }
     }
