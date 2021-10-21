@@ -42,7 +42,7 @@ Nosso cliente, o **Grupo Level**, entendendo o potencial que possui com o seu gr
 *Uma van que instala o pneu no endereço escolhido pelo cliente nas regiões de atuação.*
 
 ### 🏛️ Parceiro
-*O cliente escolhe em qual oficina parceira o serviço seja feito.*
+*O cliente escolhe em qual oficina parceira o serviço deve ser feito.*
 
 
 🏗️ Sobre o desenvolvimento back-end <a name="Back-End"></a>
