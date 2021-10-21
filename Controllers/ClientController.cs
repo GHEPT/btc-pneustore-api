@@ -61,7 +61,7 @@ namespace Equipe2_PneuStore.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [AllowAnonymous]
+        [Authorize]
         [HttpPost]        
         public IActionResult Create([FromBody] Client client)
         {
@@ -80,8 +80,9 @@ namespace Equipe2_PneuStore.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [HttpPatch]
+        [HttpPut]
         [Authorize]
+        [Route("{id}")]
         public IActionResult Update([FromBody] Client client)
         {
             return _service.Update(client) ?

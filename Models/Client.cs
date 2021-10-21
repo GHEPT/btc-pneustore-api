@@ -23,7 +23,6 @@ namespace Equipe2_PneuStore.Models
 
         [Required(ErrorMessage = "Data de Nascimento Obrigatório")]
         [DataType(DataType.Date)]
-
         public DateTime BirthDate { get; set; }
 
         public string Address1 { get; set; }
