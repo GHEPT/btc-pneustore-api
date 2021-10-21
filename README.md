@@ -2,7 +2,7 @@ Bootcamp | PneuStore <a name="Aqui"></a>
 ![Badge](https://img.shields.io/date/1630014400)
 ================
 
-![Swagger Methods](https://i.imgur.com/8YrDdHU.png)
+![Swagger Methods](https://i.imgur.com/45aCtO9.png)
 
 
 📖 Conheça o projeto
