@@ -85,28 +85,60 @@ Para testar apenas o back-end, basta fazer o [Download do Postman](https://www.p
 
 ### Tecnologias utilizadas <a name="TecnologiasFront"></a>
 
-Loren Ipsum...
+⚛️ React
+💢 SCSS
+🆚 Visual Studio Code
 
 ### Como baixar o front-end <a name="DownloadFTE"></a>
 
-Loren Ipsum...
+Basta seguir o mesmo passo informado do download do back-end, através deste repositório:
+
+        https://github.com/vitorlombardi/PneuStore-BTC
+
+Se você não lembra como fazero download, basta [ver aqui](#DownloadBKE).
 
 ### Como utilizar o projeto <a name="UsarFTE"></a>
 
-Loren Ipsum...
+No diretório do projeto você pode executar o comando a seguir para baixar as dependências so projeto: 
+
+        npm install
+
+Após esta etapa, execute o comando a seguir para começar:
+
+        npm start
+
+A aplicação de front-end está disponível no VERCEL, através do link: [https://pneu-store-btc.vercel.app/](https://pneu-store-btc.vercel.app/)
 
 
 # 💹 Nossas Soluções para o Checkout <a name="Soluções"></a>
 
    * 🏁 Layout <a name="Layout"></a>
+   
+   Limpo e mantendo sempre o carrinho de compras do lado direito da tela, dando fluidez.
+
+   ![Layout](https://i.imgur.com/i8b8D9r.png)
 
    * 🤩 Barra de Progresso <a name="Barra-de-Progresso"></a>
+   
+   Incluímos um "Wizard", indicando as etapas do processo de compras e em qual delas o cliente está. Dessa forma o cliente não se sente perdido e evita que ele desista da compra.
+   
+   ![Wizard](https://i.imgur.com/NrI6drO.png)
 
    * 🆕 Destaque dos Serviços <a name="Destaque"></a>
+   
+   Neste momento em que o cliente insere o seu CEP, temos o destaque dos serviços da PneuStore para a Montagem Móvel no primeiro card e para a montagem em um Parceiro no segundo card.
+   
+   ![Destaques](https://i.imgur.com/nyRNxze.png)
 
    * 👀 Modal de Endereços <a name="Modal-Endereços"></a>
+   
+   A ideia de inserir um modal para o endereço, já com outras informações como data de agendamento do serviço / entrega, é ideal para gerar um gatilho no cliente de que esse passo é um informação complementar necessária, mas evita de poluir a tela com mais cards.
+   
+   ![ModalEndereços](https://i.imgur.com/wcjpAtr.png)
 
    * ▶️ Render Otimizado <a name="Render-Otimizado"></a>
+   
+   O desenvolvimento com o React possibilita aplicações que recarregam informações de atualização na página em tempo real, sem a necessidade de um recarregamento da página, como acontece na aplicação atual. O recarregamento pode impactar em perda de vendas por diversos fatores, como por exemplo uma perda de conexão ou falha no carregamento. Não é possível mostrar como fica isso através de uma foto, então que tal fazer o teste na aplicação? 🛫  
 
 
 🧩 Equipe e Gerenciamento do Projeto <a name="Gerenciamento"></a>
